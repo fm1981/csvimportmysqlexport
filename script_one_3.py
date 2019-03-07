@@ -102,7 +102,7 @@ def format_header(row):
     return header
 
 
-mydb = mysql.connector.connect(user='***', passwd='***', database='***', host='85.10.205.173', port = '3306')
+mydb = mysql.connector.connect(user='fmorgan1981', passwd='batman66', database='fraser_test', host='85.10.205.173', port = '3306')
 print("\nConnection to DB established\n")
 mycursor = mydb.cursor()
 csvfile = 'animal.csv'
@@ -118,6 +118,10 @@ for i, row in enumerate(csv.reader(open(csvfile))):
         mycursor.execute(insert_sql, row)
     else:
         header = (row)
+        n = len(header)
+        for col in range(n):
+          header[col] = (header[col].encode('ascii', 'ignore')).decode("utf-8")
+
         schema_sql = gen_schema(table, header, col_types)
         print(schema_sql)
 
