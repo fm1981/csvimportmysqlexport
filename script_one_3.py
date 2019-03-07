@@ -102,7 +102,7 @@ def format_header(row):
     return header
 
 
-mydb = mysql.connector.connect(user='fmorgan1981', passwd='batman66', database='fraser_test', host='85.10.205.173', port = '3306')
+mydb = mysql.connector.connect(user='***', passwd='***', database='***', host='85.10.205.173', port = '3306')
 print("\nConnection to DB established\n")
 mycursor = mydb.cursor()
 csvfile = 'animal.csv'
