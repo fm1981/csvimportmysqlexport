@@ -102,14 +102,14 @@ def format_header(row):
     return header
 
 
-mydb = mysql.connector.connect(user='fmorgan1981', passwd='batman66', database='fraser_test', host='85.10.205.173', port = '3306')
+mydb = mysql.connector.connect(user='fmorgan', passwd='U#qUC76d', database='quantix_test', host='85.10.205.173', port = '3306')
 print("\nConnection to DB established\n")
 mycursor = mydb.cursor()
-csvfile = 'animal.csv'
+csvfile = 'tabledata.csv'
 print('Analyzing column types ...')
 col_types = find_col_types(csvfile)
 print(col_types)
-table = 'animal'
+table = 'table1'
 
 
 header = None
